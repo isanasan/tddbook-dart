@@ -10,4 +10,9 @@ void main() {
     Dollar fifteen = five.times(3);
     expect(fifteen.amount, 15);
   });
+
+  test('Equality', () {
+    expect(Dollar(5).equals(Dollar(5)), true);
+    expect(Dollar(5).equals(Dollar(6)), false);
+  });
 }
