@@ -1,4 +1,4 @@
-import 'package:tddbook_dart/money.dart';
+import 'package:tddbook_dart/dollar.dart';
 import 'package:tddbook_dart/franc.dart';
 import 'package:test/test.dart';
 
