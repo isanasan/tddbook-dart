@@ -1,14 +1,9 @@
-class Franc {
-  int amount;
+import 'package:tddbook_dart/money/money.dart';
 
-  Franc(this.amount);
+class Franc extends Money {
+  Franc(amount) : super(amount);
 
   Franc times(int multiplier) {
     return Franc(amount * multiplier);
-  }
-
-  bool equals(Object object) {
-    Franc franc = object as Franc;
-    return amount == franc.amount;
   }
 }
