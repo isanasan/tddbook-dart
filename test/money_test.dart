@@ -14,6 +14,7 @@ void main() {
     expect(Dollar(5).equals(Dollar(5)), true);
     expect(Franc(5).equals(Franc(6)), false);
     expect(Franc(5).equals(Franc(6)), false);
+    expect(Franc(5).equals(Dollar(5)), false);
   });
 
   test('Franc Multiplication', () {

@@ -5,6 +5,6 @@ class Money {
 
   bool equals(Object object) {
     Money money = object as Money;
-    return amount == money.amount;
+    return amount == money.amount && runtimeType == money.runtimeType;
   }
 }
