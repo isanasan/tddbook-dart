@@ -1,25 +1,24 @@
-import 'package:tddbook_dart/money/dollar.dart';
-import 'package:tddbook_dart/money/franc.dart';
+import 'package:tddbook_dart/money/money.dart';
 import 'package:test/test.dart';
 
 void main() {
   test('Multiplication', () {
-    var five = Dollar(5);
-    expect(Dollar(10).equals(five.times(2)), true);
-    expect(Dollar(15).equals(five.times(3)), true);
+    Money five = Money.dollar(5);
+    expect(Money.dollar(10).equals(five.times(2)), true);
+    expect(Money.dollar(15).equals(five.times(3)), true);
   });
 
   test('Equality', () {
-    expect(Dollar(5).equals(Dollar(5)), true);
-    expect(Dollar(5).equals(Dollar(5)), true);
-    expect(Franc(5).equals(Franc(6)), false);
-    expect(Franc(5).equals(Franc(6)), false);
-    expect(Franc(5).equals(Dollar(5)), false);
+    expect(Money.dollar(5).equals(Money.dollar(5)), true);
+    expect(Money.dollar(5).equals(Money.dollar(5)), true);
+    expect(Money.franc(5).equals(Money.franc(6)), false);
+    expect(Money.franc(5).equals(Money.franc(6)), false);
+    expect(Money.franc(5).equals(Money.dollar(5)), false);
   });
 
   test('Franc Multiplication', () {
-    var five = Franc(5);
-    expect(Franc(10).equals(five.times(2)), true);
-    expect(Franc(15).equals(five.times(3)), true);
+    var five = Money.franc(5);
+    expect(Money.franc(10).equals(five.times(2)), true);
+    expect(Money.franc(15).equals(five.times(3)), true);
   });
 }
