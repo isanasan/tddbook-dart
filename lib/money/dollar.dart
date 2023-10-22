@@ -5,6 +5,6 @@ class Dollar extends Money {
 
   @override
   Money times(int multiplier) {
-    return Money(amount * multiplier, super.currency);
+    return Dollar(amount * multiplier, super.currency);
   }
 }
