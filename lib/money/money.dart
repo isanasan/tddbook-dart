@@ -1,4 +1,6 @@
-class Money {
+import 'package:tddbook_dart/money/expression.dart';
+
+class Money implements Expression {
   int amount = 0;
   final String currency;
 
@@ -6,6 +8,10 @@ class Money {
 
   Money times(int multiplier) {
     return Money(amount * multiplier, currency);
+  }
+
+  Expression plus(Money addend) {
+    return Money(amount + addend.amount, currency);
   }
 
   bool equals(Object object) {
