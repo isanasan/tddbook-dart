@@ -1,4 +1,5 @@
 import 'package:tddbook_dart/money/expression.dart';
+import 'package:tddbook_dart/money/sum.dart';
 
 class Money implements Expression {
   int amount = 0;
@@ -11,12 +12,17 @@ class Money implements Expression {
   }
 
   Expression plus(Money addend) {
-    return Money(amount + addend.amount, currency);
+    return Sum(this, addend);
   }
 
   bool equals(Object object) {
     Money money = object as Money;
     return amount == money.amount && currency == money.currency;
+  }
+
+  @override
+  Money reduce(String to) {
+    return this;
   }
 
   static Money dollar(int amount) {
