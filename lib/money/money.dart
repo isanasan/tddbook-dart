@@ -15,10 +15,20 @@ class Money implements Expression {
     return Sum(this, addend);
   }
 
-  bool equals(Object object) {
-    Money money = object as Money;
-    return amount == money.amount && currency == money.currency;
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other is Money) {
+      return currency == other.currency && amount == other.amount;
+    } else {
+      return false;
+    }
   }
+
+  @override
+  int get hashCode => amount.hashCode;
 
   @override
   Money reduce(String to) {

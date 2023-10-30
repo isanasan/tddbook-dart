@@ -7,14 +7,14 @@ import 'package:test/test.dart';
 void main() {
   test('Multiplication', () {
     Money five = Money.dollar(5);
-    expect(Money.dollar(10).equals(five.times(2)), true);
-    expect(Money.dollar(15).equals(five.times(3)), true);
+    expect(Money.dollar(10), five.times(2));
+    expect(Money.dollar(15), five.times(3));
   });
 
   test('Equality', () {
-    expect(Money.dollar(5).equals(Money.dollar(5)), true);
-    expect(Money.dollar(5).equals(Money.dollar(6)), false);
-    expect(Money.franc(5).equals(Money.dollar(5)), false);
+    expect(Money.dollar(5), Money.dollar(5));
+    expect(Money.dollar(5) == Money.dollar(6), false);
+    expect(Money.franc(5) == Money.dollar(5), false);
   });
 
   test('Currency', () {
@@ -27,7 +27,7 @@ void main() {
     Expression sum = five.plus(five);
     Bank bank = Bank();
     Money reduced = bank.reduce(sum, "USD");
-    expect(Money.dollar(10).equals(reduced), true);
+    expect(Money.dollar(10), reduced);
   });
 
   test('plus returns sum', () {
@@ -42,12 +42,12 @@ void main() {
     Expression sum = Sum(Money.dollar(3), Money.dollar(4));
     Bank bank = Bank();
     Money result = bank.reduce(sum, "USD");
-    expect(result.equals(Money.dollar(7)), true);
+    expect(result, Money.dollar(7));
   });
 
   test('reduce money', () {
     Bank bank = Bank();
     Money result = bank.reduce(Money.dollar(1), "USD");
-    expect(result.equals(Money.dollar(1)), true);
+    expect(result, Money.dollar(1));
   });
 }
