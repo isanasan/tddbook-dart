@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:tddbook_dart/money/money.dart';
 import 'package:tddbook_dart/money/expression.dart';
 import 'package:tddbook_dart/money/bank.dart';
@@ -56,5 +58,20 @@ void main() {
     bank.addRate("CHF", "USD", 2);
     Money result = bank.reduce(Money.franc(2), "USD");
     expect(result, Money.dollar(1));
+  });
+
+  test('array equals', () {
+    var test = {
+      {
+        "from": "USD",
+        "to": "CHF",
+      }: 2,
+    };
+    expect(
+        test[{
+          "from": "USD",
+          "to": "CHF",
+        }],
+        2);
   });
 }
