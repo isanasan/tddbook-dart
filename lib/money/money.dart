@@ -1,3 +1,4 @@
+import 'package:tddbook_dart/money/bank.dart';
 import 'package:tddbook_dart/money/expression.dart';
 import 'package:tddbook_dart/money/sum.dart';
 
@@ -31,8 +32,9 @@ class Money implements Expression {
   int get hashCode => amount.hashCode;
 
   @override
-  Money reduce(String to) {
-    return this;
+  Money reduce(Bank bank, String to) {
+    int rate = bank.rate(currency, to);
+    return Money(amount ~/ rate, to);
   }
 
   static Money dollar(int amount) {
