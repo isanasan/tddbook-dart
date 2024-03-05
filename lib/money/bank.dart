@@ -14,6 +14,8 @@ class Bank {
   }
 
   int rate(String from, String to) {
+    if (from == to) return 1;
+
     int? result = _rates[Pair(from, to)];
 
     if (result == null) {
