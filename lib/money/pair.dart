@@ -15,4 +15,7 @@ class Pair {
       return false;
     }
   }
+
+  @override
+  int get hashCode => '$from$to'.hashCode;
 }
