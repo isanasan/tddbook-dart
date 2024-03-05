@@ -57,4 +57,14 @@ void main() {
     Money result = bank.reduce(Money.franc(2), "USD");
     expect(result, Money.dollar(1));
   });
+
+  test('mixed addition', () {
+    Expression fiveBucks = Money.dollar(5);
+    Expression tenFranc = Money.franc(10);
+
+    Bank bank = Bank();
+    bank.addRate("CHF", "USD", 2);
+    Money result = bank.reduce(fiveBucks.plus(tenFranc), "USD");
+    expect(result.amount, Money.dollar(10).amount);
+  });
 }
