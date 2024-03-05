@@ -17,6 +17,11 @@ class Sum implements Expression {
 
   @override
   Expression plus(Expression addend) {
-    return Money(0, "USD");
+    return Sum(this, addend);
+  }
+
+  @override
+  Expression times(int multiplier) {
+    return Sum(augend.times(multiplier), addend.times(multiplier));
   }
 }

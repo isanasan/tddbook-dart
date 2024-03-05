@@ -67,4 +67,24 @@ void main() {
     Money result = bank.reduce(fiveBucks.plus(tenFranc), "USD");
     expect(result.amount, Money.dollar(10).amount);
   });
+
+  test('sum plus money', () {
+    Expression fiveBucks = Money.dollar(5);
+    Expression tenFranc = Money.franc(10);
+    Bank bank = Bank();
+    bank.addRate("CHF", "USD", 2);
+    Expression sum = Sum(fiveBucks, tenFranc).plus(fiveBucks);
+    Money result = bank.reduce(sum, "USD");
+    expect(result.amount, Money.dollar(15).amount);
+  });
+
+  test('sum times', () {
+    Expression fiveBucks = Money.dollar(5);
+    Expression tenFranc = Money.franc(10);
+    Bank bank = Bank();
+    bank.addRate("CHF", "USD", 2);
+    Expression sum = Sum(fiveBucks, tenFranc).times(2);
+    Money result = bank.reduce(sum, "USD");
+    expect(result.amount, Money.dollar(20).amount);
+  });
 }
