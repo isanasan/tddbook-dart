@@ -4,6 +4,10 @@ class WasRun {
 
   WasRun(this.name);
 
+  void run() {
+    testMethod();
+  }
+
   void testMethod() {
     wasRun = true;
   }
