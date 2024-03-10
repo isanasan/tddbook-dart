@@ -1,3 +1,5 @@
+import 'dart:mirrors';
+
 class WasRun {
   String name;
   bool wasRun = false;
@@ -5,7 +7,9 @@ class WasRun {
   WasRun(this.name);
 
   void run() {
-    testMethod();
+    var mirrror = reflect(this);
+    var symbol = Symbol(name);
+    mirrror.invoke(symbol, <dynamic>[]);
   }
 
   void testMethod() {
