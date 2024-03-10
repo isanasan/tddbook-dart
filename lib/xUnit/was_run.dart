@@ -1,10 +1,11 @@
 import 'dart:mirrors';
 
-class WasRun {
-  String name;
+import 'package:tddbook_dart/xUnit/test_case.dart';
+
+class WasRun extends TestCase {
   bool wasRun = false;
 
-  WasRun(this.name);
+  WasRun(name) : super(name);
 
   void run() {
     var mirrror = reflect(this);
