@@ -1,8 +1,5 @@
-import 'package:tddbook_dart/xUnit/was_run.dart';
+import 'package:tddbook_dart/xUnit/test_case_test.dart';
 
 void main() {
-  WasRun test = WasRun("testMethod");
-  print(test.wasRun);
-  test.run();
-  print(test.wasRun);
+  TestCaseTest("testRunning").run();
 }
