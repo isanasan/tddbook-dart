@@ -10,4 +10,10 @@ class TestCaseTest extends TestCase {
     test.run();
     assert(test.wasRun);
   }
+
+  void testSetUp() {
+    WasRun test = WasRun("testMethod");
+    test.run();
+    assert(test.wasSetUp);
+  }
 }
