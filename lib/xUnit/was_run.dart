@@ -15,4 +15,9 @@ class WasRun extends TestCase {
     wasSetUp = true;
     log = "setUp ";
   }
+
+  @override
+  void tearDown() {
+    log = "${log}tearDown ";
+  }
 }

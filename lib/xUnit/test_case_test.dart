@@ -7,6 +7,6 @@ class TestCaseTest extends TestCase {
   void testTemplateMethod() {
     WasRun test = WasRun("testMethod");
     test.run();
-    assert("setUp testMethod " == test.log);
+    assert("setUp testMethod tearDown " == test.log);
   }
 }
