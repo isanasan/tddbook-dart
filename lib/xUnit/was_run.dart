@@ -1,7 +1,7 @@
 import 'package:tddbook_dart/xUnit/test_case.dart';
 
 class WasRun extends TestCase {
-  bool wasRun = false;
+  late bool wasRun;
   bool wasSetUp = false;
 
   WasRun(name) : super(name);
@@ -10,7 +10,9 @@ class WasRun extends TestCase {
     wasRun = true;
   }
 
+  @override
   void setUp() {
+    wasRun = false;
     wasSetUp = true;
   }
 }
