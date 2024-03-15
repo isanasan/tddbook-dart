@@ -9,6 +9,7 @@ class WasRun extends TestCase {
 
   void testMethod() {
     wasRun = true;
+    log = "${log}testMethod ";
   }
 
   @override

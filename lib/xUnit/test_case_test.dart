@@ -17,6 +17,6 @@ class TestCaseTest extends TestCase {
 
   void testSetUp() {
     test.run();
-    assert("setUp " == test.log);
+    assert("setUp testMethod " == test.log);
   }
 }
