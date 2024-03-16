@@ -16,6 +16,10 @@ class WasRun extends TestCase {
     log = "setUp ";
   }
 
+  void testBrokenMethod() {
+    throw Exception();
+  }
+
   @override
   void tearDown() {
     log = "${log}tearDown ";
