@@ -16,8 +16,12 @@ class TestCase {
     result.testStarted();
     setUp();
     var mirrror = reflect(this);
-    var symbol = Symbol(name);
-    mirrror.invoke(symbol, <dynamic>[]);
+    try {
+      var symbol = Symbol(name);
+      mirrror.invoke(symbol, <dynamic>[]);
+    } on Exception {
+      result.testFailed();
+    }
     tearDown();
     return result;
   }
