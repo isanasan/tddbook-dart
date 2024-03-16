@@ -12,11 +12,13 @@ class TestCase {
   void tearDown() {}
 
   TestResult run() {
+    TestResult result = TestResult();
+    result.testStarted();
     setUp();
     var mirrror = reflect(this);
     var symbol = Symbol(name);
     mirrror.invoke(symbol, <dynamic>[]);
     tearDown();
-    return TestResult();
+    return result;
   }
 }
