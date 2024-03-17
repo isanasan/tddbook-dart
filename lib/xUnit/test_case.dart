@@ -11,8 +11,7 @@ class TestCase {
 
   void tearDown() {}
 
-  TestResult run() {
-    TestResult result = TestResult();
+  void run(TestResult result) {
     result.testStarted();
     setUp();
     var mirrror = reflect(this);
@@ -23,6 +22,5 @@ class TestCase {
       result.testFailed();
     }
     tearDown();
-    return result;
   }
 }

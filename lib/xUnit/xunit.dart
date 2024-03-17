@@ -1,8 +1,15 @@
 import 'package:tddbook_dart/xUnit/test_case_test.dart';
+import 'package:tddbook_dart/xUnit/test_result.dart';
+import 'package:tddbook_dart/xUnit/test_suite.dart';
 
 void main() {
-  print(TestCaseTest("testTemplateMethod").run().summary());
-  print(TestCaseTest("testResult").run().summary());
-  print(TestCaseTest("testFailedResult").run().summary());
-  print(TestCaseTest("testFailedResultFormatting").run().summary());
+  TestSuite suite = TestSuite();
+  suite.add(TestCaseTest("testTemplateMethod"));
+  suite.add(TestCaseTest("testResult"));
+  suite.add(TestCaseTest("testFailedResult"));
+  suite.add(TestCaseTest("testFailedResultFormatting"));
+  suite.add(TestCaseTest("testSuite"));
+  TestResult result = TestResult();
+  suite.run(result);
+  print(result.summary());
 }
